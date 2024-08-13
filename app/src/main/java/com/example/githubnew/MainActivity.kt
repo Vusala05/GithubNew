@@ -13,6 +13,8 @@ class MainActivity : AppCompatActivity() {
 
         setupPlus()
         setupMinus()
+        setupMultiply()
+        setupDivide()
 
     }
     private fun setupPlus() {
@@ -29,6 +31,30 @@ class MainActivity : AppCompatActivity() {
             val secondNum = binding.secondNum.text.toString().toDoubleOrNull() ?: 0.0
             val result = firstNum - secondNum
             binding.result.text = result.toString()
+        }
+    }
+    private fun setupMultiply() {
+        binding.multiply.setOnClickListener {
+            val firstNum = binding.firstNum.text.toString().toDoubleOrNull() ?: 0.0
+            val secondNum = binding.secondNum.text.toString().toDoubleOrNull() ?: 0.0
+            val result = firstNum * secondNum
+            binding.result.text = result.toString()
+
+
+        }
+    }
+
+    private fun setupDivide() {
+        binding.divide.setOnClickListener {
+            val firstNum = binding.firstNum.text.toString().toDoubleOrNull() ?: 0.0
+            val secondNum = binding.secondNum.text.toString().toDoubleOrNull() ?: 0.0
+            if (secondNum != 0.0) {
+                val result = firstNum / secondNum
+                binding.result.text = result.toString()
+
+
+            }
+
         }
     }
 }
